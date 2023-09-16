@@ -1,4 +1,5 @@
 #include <sync/sync.h>
+#include <cstdint>
 
 extern "C" {
 
