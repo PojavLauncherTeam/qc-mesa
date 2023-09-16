@@ -25,8 +25,8 @@ jobs:
           pip3 install mako
           mkdir build
           cd build
-          envsubst <../android-${{matrix.arch}} >build-crossfile
           export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
+          envsubst <../android-${{matrix.arch}} >build-crossfile
           meson setup \
             --prefix=/tmp/zink \
             --cross-file "build-crossfile" \
