@@ -167,7 +167,7 @@ os_get_android_option(const char *name)
       }
    }
 
-   int len = property_get(key, os_android_option_value, NULL);
+   int len = /*property_get(key, os_android_option_value, NULL)*/0;
    if (len > 1) {
       return os_android_option_value;
    }
