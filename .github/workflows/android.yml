@@ -31,7 +31,6 @@ jobs:
           meson setup "build-android" \
             --prefix=/tmp/zink \
             --cross-file "build-crossfile" \
-            --buildtype debug \
             -Dplatforms=android \
             -Dplatform-sdk-version=25 \
             -Dandroid-stub=true \
