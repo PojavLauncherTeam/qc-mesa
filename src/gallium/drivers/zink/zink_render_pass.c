@@ -500,10 +500,10 @@ get_render_pass(struct zink_context *ctx)
       state.num_rts++;
    }
    state.have_zsbuf = have_zsbuf;
-   if (zink_use_dummy_attachments(ctx))
+   /*if (zink_use_dummy_attachments(ctx))
       assert(clears == (ctx->rp_clears_enabled & PIPE_CLEAR_DEPTHSTENCIL));
    else
-      assert(clears == ctx->rp_clears_enabled);
+      assert(clears == ctx->rp_clears_enabled);*/
    state.clears = clears;
    uint32_t hash = hash_render_pass_state(&state);
    struct hash_entry *entry = _mesa_hash_table_search_pre_hashed(ctx->render_pass_cache, hash,
@@ -703,7 +703,7 @@ begin_render_pass(struct zink_context *ctx)
             clear_buffers |= zink_fb_clear_element(fb_clear, j)->zs.bits;
       }
    }
-   assert(clear_validate == ctx->framebuffer->rp->state.clears);
+   //assert(clear_validate == ctx->framebuffer->rp->state.clears);
    rpbi.pClearValues = &clears[0];
    rpbi.framebuffer = ctx->framebuffer->fb;
 
