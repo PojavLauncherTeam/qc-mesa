@@ -44,7 +44,8 @@ jobs:
             -Dvulkan-drivers= \
             -Dgallium-drivers=swrast,zink \
             -Dshared-glapi=false \
-            -Dandroid-libbacktrace=disabled
+            -Dandroid-libbacktrace=disabled \
+            -Dglx-read-only-text=true
           ninja -C "build-android" install
       - name: Upload libraries
         uses: actions/upload-artifact@v2
